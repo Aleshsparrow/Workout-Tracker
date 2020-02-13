@@ -1,26 +1,17 @@
 const router = require("express").Router();
-const path = require("path");
-const db = require("../models/index")
+const db = require("../models/workout.js")
 
 
-router.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname + "./../public/index.html"));
+
+router.post("/api/workouts", (req, res) => {
+    db.workouts.create({}).then(function(dbworkouts){
+        res.json(dbworkouts)
+    }).catch(err => {
+        res.status(400).json(err);
+        });
 })
-
-router.get("/stats", (req, res) => {
-    res.sendFile(path.join(__dirname + "./../public/stats.html"));
-})
-
-router.get("/exercise", (req, res) => {
-    res.sendFile(path.join(__dirname + "./../public/exercise.html"));
-})
-
-router.get("/exercise?", (req, res) => {
-    res.sendFile(path.join(__dirname + "./../public/exercise.html"))
-})
-
 router.get("/api/workouts", (req, res) => {
-    db.findAll().then(function(dbworkouts){
+    db.workouts.findAll().then(function(dbworkouts){
         res.json(dbworkouts)
     })
     .catch(err => {
@@ -28,12 +19,6 @@ router.get("/api/workouts", (req, res) => {
         });
 })
 
-router.post("/api/workouts", (req, res) => {
-    db.create({}).then(function(dbworkouts){
-        res.json(dbworkouts)
-    }).catch(err => {
-        res.status(400).json(err);
-        });
-})
+  
 
 module.exports = router;
