@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const path = require("path");
-const db = require("../models")
+const db = require("../models/index")
 
 
 router.get("/", (req, res) => {
@@ -20,9 +20,20 @@ router.get("/exercise?", (req, res) => {
 })
 
 router.get("/api/workouts", (req, res) => {
-    db.workouts.findAll({}).then(function(dbworkouts){
+    db.findAll().then(function(dbworkouts){
         res.json(dbworkouts)
     })
+    .catch(err => {
+        res.status(400).json(err);
+        });
+})
+
+router.post("/api/workouts", (req, res) => {
+    db.create({}).then(function(dbworkouts){
+        res.json(dbworkouts)
+    }).catch(err => {
+        res.status(400).json(err);
+        });
 })
 
 module.exports = router;
