@@ -3,7 +3,7 @@ const db = require("../models")
 
 // console.log(db);
 
-
+// Route to get information posted from the front end
 router.post("/api/workouts", (req, res) => {
     console.log(req.body)
     db.Workout.create(req.body).then(function(dbworkouts){
@@ -13,6 +13,7 @@ router.post("/api/workouts", (req, res) => {
         res.status(400).json(err);
         });
 })
+
 
 router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({})
@@ -25,6 +26,7 @@ router.get("/api/workouts/range", (req, res) => {
       });
   });
 
+  // Route to get all workouts
 router.get("/api/workouts", (req, res) => {
     db.Workout.find({}).then(function(dbworkouts){
         res.json(dbworkouts)
@@ -34,6 +36,7 @@ router.get("/api/workouts", (req, res) => {
         });
 })
 
+// Route to update based on the workour chosen
 router.put("/api/workouts/:id", (req, res) => {
     db.Workout.update(
       {_id: req.params.id},
