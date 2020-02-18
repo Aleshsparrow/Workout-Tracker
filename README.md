@@ -1,8 +1,7 @@
 # Workout-Tracker
-This app was developed to help workout enthusiastes track their activities.
+This app was developed to help workout enthusiastes track their activities and also monitor their progress. This app gives a sumarry of workout activities, how long it took to complete the activity and some other important details.
 
-
-
+All you need to use this app is a web browser.
 
 
 ## Built with
@@ -10,7 +9,7 @@ This app was developed to help workout enthusiastes track their activities.
 
 
 ## Usage
-* To keep up with the important details in my business.
+* To help keep up with workout activities and monitor progress.
 
 ## Contact
 * Segun Alesinloye 
