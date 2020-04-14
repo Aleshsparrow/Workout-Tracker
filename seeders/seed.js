@@ -1,6 +1,7 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
+// Seeding the database with some workout information
 mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
