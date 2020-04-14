@@ -1,3 +1,4 @@
+// Requiring the important npm packages
 const router = require("express").Router();
 const db = require("../models")
 
@@ -14,7 +15,7 @@ router.post("/api/workouts", (req, res) => {
         });
 })
 
-
+// Route to get range
 router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({})
       .then(dbWorkout => {
