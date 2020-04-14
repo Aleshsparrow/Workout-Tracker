@@ -1,3 +1,4 @@
+// Seeting up front end api calls to the back end
 const API = {
   async getLastWorkout() {
     let res;
