@@ -1,6 +1,8 @@
 # Workout-Tracker
 This app was developed to help workout enthusiastes track their activities and also monitor their progress. This app gives a sumarry of workout activities, how long it took to complete the activity and some other important details.
 
+The back end of the app was designed using with node.js, express server and the database used was mongodb using the mongoose npm package.
+
 All you need to use this app is a web browser.
 
 
