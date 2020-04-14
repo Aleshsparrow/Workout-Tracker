@@ -54,5 +54,5 @@ router.put("/api/workouts/:id", (req, res) => {
   });
 
   
-
+// Exporting the routes so the server can have access.
 module.exports = router;
