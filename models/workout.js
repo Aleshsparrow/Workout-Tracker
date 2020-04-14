@@ -1,3 +1,5 @@
+// Making the database strict, seeting up the type of data wanted in the database
+
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
